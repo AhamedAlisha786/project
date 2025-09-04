@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p>Your youtube</p>
+        <button onclick="clicked()">subscribe</button>
+        <p>amazon product</p>
+        <p class="in"></p>
+        <input placeholder="enter the number" class="click">
+        <button onclick="clone()">submit</button>
+        <p class="hi"></p>
+
+        <script>
+            console.log(document.querySelectorAll('button'))
+            twop();
+            function clicked(){
+            const element=document.querySelector('button').innerHTML;
+            if(element==='subscribe'){
+               document.querySelector('button').innerHTML='subscribed' 
+            }
+            else{
+                document.querySelector('button').innerHTML='subscribe';
+            }
+            }
+            function clone(){
+                const inputelement = document.querySelector('.click');
+                let element=parseInt(inputelement.value)
+                if(element<40){
+                    element+=10
+                    document.querySelector('.hi').innerHTML=element
+                }
+                else{
+                    element+=0
+                    document.querySelector('.hi').innerHTML=element
+                }
+            }
+            function twop(){
+                document.querySelector('.in').innerHTML=`if it is $40 add 10  if it is greater than the $40 add 0`
+            }
+        </script>
+    </body>
+</html> engine light

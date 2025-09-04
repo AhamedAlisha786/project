@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>fazil</title>
+    </head>
+    <body>
+        <script>
+            function arr(){
+                let nums=0
+                function inner(){
+                    nums++
+                    console.log(nums)
+                }
+                return inner
+            }
+            const arr1=arr()
+            arr1()
+            arr1()
+        </script>
+    </body>
+</html>
