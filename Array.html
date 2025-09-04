@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>array</title>
+    </head>
+    <body>
+        <input placeholder="add to list" class="list">
+        <button onclick="list1()">add</button>
+        <br>
+        <br>
+        <input placeholder="add to list" class="list2">
+        <input  type="date" class="list3">
+        <button onclick="list()">add</button>
+
+        <div class="id"></div>
+        <script>
+            arr=[{
+                name:"alisha",
+                date:"27-10-2003"
+            }]
+            function list1(){
+                const element=document.querySelector('.list');
+                arr.push(element.value)
+                console.log(arr)
+                element.value=''
+            }
+            function list(){
+                const element=document.querySelector('.list2');
+                const element2=document.querySelector('.list3');
+                const name = element.value;
+                const date=element2.value;
+                      if (name !== '') {
+                            arr.push({ name, date });
+                            element.value = '';
+                            element2.value = '';
+            }
+                let ht=''; //acumulator variable
+                for(let i=0;i<arr.length;i++){
+                    const todo=arr[i];
+                    // const name = arr.name;
+                    // const date = arr.date;
+                    const{name,date}=todo
+                    const todohtml = `<p>${name} ${date}
+                        <button onclick="arr.splice(${i},1); list()">delete</button></p>`;
+                    ht+=todohtml;  
+                    console.log(ht)         
+                }
+                document.querySelector('.id').innerHTML=ht;
+
+            }
+        </script>
+    </body>
+</html>
